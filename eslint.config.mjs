@@ -8,6 +8,15 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
     {
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+                ...globals.jest,
+            },
+        },
+    },
+    {
         files: ['**/*.{js,mjs,cjs,ts}'],
         plugins: { js },
         extends: ['js/recommended'],
