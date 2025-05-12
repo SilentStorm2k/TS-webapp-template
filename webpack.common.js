@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
     entry: './src/ts/index.ts',
@@ -8,7 +9,14 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        // options are picked from babel.config.js
+                        // can optionally add them here to but consider adding them to the config file
+                    },
+                },
+                // use: 'ts-loader',
                 exclude: /node_modules/,
             },
             {
@@ -36,6 +44,19 @@ module.exports = {
             context: path.resolve(__dirname, 'src'),
             files: '**/*.ts', // for TS files specifically
             extensions: ['ts', 'tsx', 'js', 'jsx'],
+        }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                configFile: path.resolve(__dirname, 'tsconfig.json'),
+                // You can specify the language service or typescript path if needed
+                // diagnosticOptions: {
+                //   syntactic: true,
+                //   semantic: true,
+                //   global: false,
+                // },
+                // mode: 'write-references', // or 'write-references' for incremental builds
+            },
+            async: true,
         }),
     ],
     output: {
