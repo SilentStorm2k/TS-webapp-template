@@ -89,6 +89,11 @@ SOFTWARE. -->
   </ol>
 </details>
 
+## TODO:
+
+Look into `.prettierrc`, `eslint.config.mjs`, `webpack.common.js`, `gh-pages-deploy.sh`, and `package.json`, and understand how the files and scripts interact with each other. How and when you want to change the format, and if switching to new language or framework, how to update the config files, etc.
+If you run into some issues, and your code is clean, it probably has to do with the config files
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project

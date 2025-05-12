@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     entry: './src/ts/index.ts',
@@ -25,11 +26,16 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', '.mjs', '.jsx'],
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/template.html',
+        }),
+        new ESLintPlugin({
+            context: path.resolve(__dirname, 'src'),
+            files: '**/*.ts', // for TS files specifically
+            extensions: ['ts', 'tsx', 'js', 'jsx'],
         }),
     ],
     output: {
