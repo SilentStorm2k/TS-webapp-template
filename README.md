@@ -118,6 +118,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 - [![Typescript][Typescript-shield]][Typescript-url]
 - [![CSS][CSS-shield]][CSS-url]
 - [![HTML][HTML-shield]][HTML-url]
+- [![Jest][JEST-shield]][JEST-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -261,3 +262,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [CSS-shield]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 [HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [HTML-shield]: https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
+[JEST-url]: https://jestjs.io/
+[JEST-shield]: https://img.shields.io/badge/Jest-323330?style=for-the-badge&logo=Jest&logoColor=white
